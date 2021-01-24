@@ -1,0 +1,90 @@
+:root {
+    --clr-primary: #FFCF9C;
+    --clr-primary-dark: #663500;
+
+    --clr-secondary: #3A445D;
+    --clr-secondary-glare: #AAD0DA;
+
+    --clr-tertiary: #EFBDBD;
+
+    --clr-accent: #9BE564;
+}
+
+/* Reset */
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+h1,
+h2,
+p {
+    margin: 0;
+}
+
+textarea {
+    display: block;
+    width: 100%;
+}
+
+ul {
+    margin: 0;
+}
+
+/* Utility classes */
+
+.container {
+    max-width: var(--container-width, 30em);
+    margin: 0 auto;
+}
+
+.flow > *+* {
+    margin-top: var(--flow-space, 1rem);
+}
+
+/* General stylings */
+body {
+    text-align: center;
+    background-color: var(--clr-secondary-glare);
+    color: var(--clr-secondary);
+    font-size: 1.5rem;
+    line-height: 1.5;
+    font-family: 'Gill Sans',
+    'Gill Sans MT';
+}
+
+.btn {
+    background: var(--clr-accent);
+    color: var(--clr-secondary);
+    border-radius: 1em;
+    padding: 1em 2em;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-top: 1em;
+    outline: none;
+}
+
+
+/* Components */
+.journal-entry {
+    background-color: var(--clr-primary);
+    border-radius: 1em;
+    border: unset;
+    outline: none;
+    padding: 1em;
+    color: var(--clr-primary-dark);
+}
+
+.entries {
+    background-color: var(--clr-tertiary);
+    border-radius: 1em;
+    min-height: 10em;
+    padding: 1em;
+    text-align: left;
+}
+
+.entry-list {
+    list-style: none;
+    padding: 0;
+}
