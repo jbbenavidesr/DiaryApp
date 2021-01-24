@@ -1,15 +1,30 @@
 const entryForm = document.getElementById('entryForm')
 const entryInput = document.querySelector('#journalEntry')
-const entriesContainer = document.querySelector('#entries')
+const entriesContainer = document.querySelector('.entry-list')
+const entryList = Array.from(document.querySelectorAll('.single-entry'))
+
+// function displayEntry(entryLi) {
+//     const entry =
+// }
 
 entryForm.addEventListener('submit', e => {
   e.preventDefault()
+  if (entryInput.value) {
+    const entryButton = document.createElement('button')
+    const entryContent = document.createElement('div')
+    const entryLi = document.createElement('li')
 
-  const entry = entryInput.value
-  entryInput.value = ''
+    entryLi.classList.add('single-entry')
+    entryButton.textContent = entryList.length + 1
+    entryContent.classList.add('content')
 
-  const entryLi = document.createElement('li')
-  entryLi.textContent = entry
+    entryContent.textContent = entryInput.value
+    entryInput.value = ''
 
-  entriesContainer.querySelector('.entry-list').append(entryLi)
+    entryLi.append(entryButton)
+    entryLi.append(entryContent)
+
+    entriesContainer.append(entryLi)
+    entryList.push(entryLi)
+  }
 })

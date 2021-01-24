@@ -82,9 +82,23 @@ body {
     min-height: 10em;
     padding: 1em;
     text-align: left;
+    font-family: cursive;
 }
 
 .entry-list {
     list-style: none;
     padding: 0;
+    display: flex;
+    gap: 0.5em;
 }
+
+.entry-list button {
+    padding: 1em;
+    background: var(--clr-secondary);
+    color: var(--clr-secondary-glare);
+}
+
+.entry-list .content {
+    display: none;
+}
+
