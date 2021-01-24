@@ -2,10 +2,7 @@ const entryForm = document.getElementById('entryForm')
 const entryInput = document.querySelector('#journalEntry')
 const entriesContainer = document.querySelector('.entry-list')
 const entryList = Array.from(document.querySelectorAll('.single-entry'))
-
-// function displayEntry(entryLi) {
-//     const entry =
-// }
+const entryDisplay = document.querySelector('.entry-display')
 
 entryForm.addEventListener('submit', e => {
   e.preventDefault()
@@ -23,6 +20,14 @@ entryForm.addEventListener('submit', e => {
 
     entryLi.append(entryButton)
     entryLi.append(entryContent)
+
+    entryButton.addEventListener('click', e => {
+      if (entryDisplay.textContent !== entryContent.textContent) {
+        entryDisplay.textContent = entryContent.textContent
+      } else {
+        entryDisplay.textContent = ''
+      }
+    })
 
     entriesContainer.append(entryLi)
     entryList.push(entryLi)
